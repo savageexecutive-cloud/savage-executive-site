@@ -96,10 +96,7 @@ export function ScorecardAssessment() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function skipToResults() {
-    setPhase("results");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  // No skip — email is required to see results
 
   // ── Intro ──
   if (phase === "intro") {
@@ -335,12 +332,9 @@ export function ScorecardAssessment() {
             </button>
           </form>
 
-          <button
-            onClick={skipToResults}
-            className="mt-6 text-sm text-white/30 hover:text-white/50 transition-colors underline"
-          >
-            Skip — just show my results
-          </button>
+          <p className="mt-6 text-xs text-white/20">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
         </div>
       </section>
     );

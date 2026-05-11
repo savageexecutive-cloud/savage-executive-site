@@ -238,6 +238,44 @@ export default function Home() {
         </section>
       )}
 
+      {/* Scorecard CTA */}
+      <section className="py-28 bg-surface relative texture-overlay">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+          <Reveal>
+            <div className="bg-surface-light border border-gold/20 rounded-sm p-10 md:p-14 text-center relative overflow-hidden">
+              {/* Subtle glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,39,0.04),transparent_70%)]" />
+              <div className="relative">
+                <p className="text-xs tracking-[0.2em] uppercase text-gold mb-4 font-medium">
+                  Free Self-Assessment
+                </p>
+                <h2 className="text-3xl md:text-4xl font-display text-white">
+                  How Strong Is Your{" "}
+                  <span className="text-gradient-gold italic">
+                    Leadership Foundation?
+                  </span>
+                </h2>
+                <p className="mt-4 text-white/60 leading-relaxed max-w-xl mx-auto">
+                  Take the Savage Advantage Scorecard — rate yourself across the 5
+                  disciplines that separate leaders who sustain from leaders who
+                  burn out. Two minutes. Fifteen questions. Real clarity.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                  <Button href="/scorecard">
+                    Take the Scorecard
+                  </Button>
+                </div>
+                <div className="mt-6 flex items-center justify-center gap-6 text-xs text-white/30">
+                  <span>✓ 2 minutes</span>
+                  <span>✓ Free</span>
+                  <span>✓ Instant results</span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-28 bg-surface relative overflow-hidden">
         {/* Background accent */}
