@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Kit form ID — form subscribe endpoint works on the free plan
+const KIT_FORM_ID = 9430425;
+
 // Tag IDs in Kit (Savage Executive account)
 const TAG_IDS: Record<string, number> = {
   scorecard: 19502803,
@@ -33,9 +36,9 @@ export async function POST(req: NextRequest) {
     // Determine which tag to apply based on source
     const tagId = TAG_IDS[source] || TAG_IDS["playbook-homepage"];
 
-    // Subscribe to Kit with tag
+    // Subscribe via Kit form endpoint (free plan compatible)
     const kitRes = await fetch(
-      `https://api.convertkit.com/v3/tags/${tagId}/subscribe`,
+      `https://api.convertkit.com/v3/forms/${KIT_FORM_ID}/subscribe`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -43,6 +46,7 @@ export async function POST(req: NextRequest) {
           api_key: kitApiKey,
           email,
           first_name: name,
+          tags: [tagId],
           ...(score !== undefined && {
             fields: {
               scorecard_score: String(score),
@@ -54,10 +58,10 @@ export async function POST(req: NextRequest) {
 
     if (!kitRes.ok) {
       const err = await kitRes.text();
-      console.error(`[Kit API] Tag subscribe failed (${kitRes.status}):`, err);
+      console.error(`[Kit API] Form subscribe failed (${kitRes.status}):`, err);
     } else {
       console.log(
-        `[Kit] Subscribed ${email} with tag "${source}" (${tagId})`
+        `[Kit] Subscribed ${email} via form ${KIT_FORM_ID} with tag "${source}" (${tagId})`
       );
     }
 
