@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { Reveal } from "@/components/ui/Reveal";
 import { LeadMagnetForm } from "@/components/LeadMagnetForm";
+import { ShareButtons } from "@/components/ShareButtons";
 import { Button } from "@/components/ui/Button";
 
 type Props = {
@@ -69,16 +70,19 @@ export default async function BlogPostPage({ params }: Props) {
               </p>
             )}
 
-            <div className="mt-8 flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center">
-                <span className="text-gold font-display text-sm">SS</span>
+            <div className="mt-8 flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center">
+                  <span className="text-gold font-display text-sm">SS</span>
+                </div>
+                <div>
+                  <p className="text-sm text-white font-medium">Steve Smith</p>
+                  <p className="text-xs text-white/40">
+                    Fractional COO/CFO &middot; Host, The Savage Executive Podcast
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-white font-medium">Steve Smith</p>
-                <p className="text-xs text-white/40">
-                  Fractional COO/CFO &middot; Host, The Savage Executive Podcast
-                </p>
-              </div>
+              <ShareButtons slug={slug} title={post.title} />
             </div>
           </Reveal>
         </div>
@@ -101,9 +105,18 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
-      {/* Post-article CTA */}
+      {/* Share + CTA */}
       <section className="pb-28">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          {/* Bottom share bar */}
+          <Reveal>
+            <div className="flex items-center justify-between py-8 border-t border-border/50 mb-12">
+              <p className="text-sm text-white/40 italic font-display">
+                Found this useful? Share it with a leader who needs it.
+              </p>
+              <ShareButtons slug={slug} title={post.title} />
+            </div>
+          </Reveal>
           <Reveal>
             <div className="bg-surface-light border border-border rounded-sm p-8 md:p-10">
               <div className="text-center">
