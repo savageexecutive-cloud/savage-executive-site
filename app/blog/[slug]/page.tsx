@@ -7,6 +7,7 @@ import { LeadMagnetForm } from "@/components/LeadMagnetForm";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/JsonLd";
+import { PlaybookSlideUp } from "@/components/PlaybookSlideUp";
 import { SITE } from "@/lib/constants";
 
 type Props = {
@@ -188,6 +189,8 @@ export default async function BlogPostPage({ params }: Props) {
           </Reveal>
         </div>
       </section>
+
+      <PlaybookSlideUp />
     </>
   );
 }
