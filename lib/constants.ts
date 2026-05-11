@@ -10,8 +10,9 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: "Story", href: "/#story" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Podcast", href: "/podcast" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ] as const;
 
@@ -22,40 +23,44 @@ export const STATS = [
   { value: "11 Years", label: "consecutive", sublabel: "UNDER BUDGET" },
 ] as const;
 
-export const SERVICES = {
-  executivePartnership: {
-    tag: "FOR BUSINESS LEADERS",
-    title: "Executive Partnership",
+export const SERVICE_AREAS = [
+  {
+    title: "Financial Clarity & Strategy",
     description:
-      "Fractional COO/CFO services for faith-driven CEOs running $10-50M businesses who need strategic financial and operational guidance.",
-    features: [
-      "Monthly financial health reviews",
-      "Operational guidance & systems",
-      "Biblical decision frameworks",
-      "Ongoing strategic partnership",
-    ],
-    price: "$2,497–$9,997",
-    priceNote: "per month · founding member rates",
-    cta: "Learn More",
-    href: "/executive-partnership",
+      "Monthly financial health reviews, P&L analysis, cash flow management, and building the reserves that fund vision — not just operations.",
+    icon: "chart",
   },
-  ceoCashflow: {
-    tag: "FOR CHURCHES & MINISTRIES",
-    title: "CEO of Your Cashflow",
+  {
+    title: "Operational Excellence",
     description:
-      "A financial leadership system for churches and leaders to create margin and momentum — transforming how your congregation approaches money.",
-    features: [
-      "8 video-driven modules",
-      "Church cohort format",
-      "Financial leadership framework",
-      "Biblical stewardship principles",
-    ],
-    price: "$697",
-    priceNote: "per year · per church",
-    cta: "Join the Waitlist",
-    href: "/ceo-cashflow",
+      "Systems, processes, and team structures that scale. Building infrastructure your organization can grow on for decades.",
+    icon: "cog",
   },
-} as const;
+  {
+    title: "Strategic Planning & Execution",
+    description:
+      "Aligning vision, resources, and execution into a plan your team can actually follow — with accountability built in.",
+    icon: "target",
+  },
+  {
+    title: "Team & Organizational Design",
+    description:
+      "Right people, right seats. Building teams that multiply your capacity instead of draining it.",
+    icon: "people",
+  },
+  {
+    title: "Capital Projects & Real Estate",
+    description:
+      "Navigating property acquisitions, building campaigns, and major capital decisions with wisdom and financial discipline.",
+    icon: "building",
+  },
+  {
+    title: "Board & Stakeholder Strategy",
+    description:
+      "Helping boards shift from reactive oversight to strategic partnership. Preparing leaders for high-stakes conversations.",
+    icon: "handshake",
+  },
+] as const;
 
 export const SPEAKING_TOPICS = [
   {

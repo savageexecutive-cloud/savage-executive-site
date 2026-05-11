@@ -22,8 +22,8 @@ export function ServiceCard({
   href,
 }: ServiceCardProps) {
   return (
-    <div className="bg-surface-light border border-border rounded-sm p-8 md:p-10 flex flex-col h-full">
-      <span className="inline-block text-xs tracking-[0.2em] uppercase text-white/50 border border-white/20 rounded-full px-4 py-1.5 self-start mb-6">
+    <div className="bg-surface-light border border-border rounded-sm p-8 md:p-10 flex flex-col h-full card-hover group">
+      <span className="inline-block text-xs tracking-[0.2em] uppercase text-gold/80 border border-gold/30 rounded-full px-4 py-1.5 self-start mb-6 transition-colors group-hover:border-gold/50 group-hover:text-gold">
         {tag}
       </span>
 
@@ -51,7 +51,9 @@ export function ServiceCard({
       </div>
 
       <div className="border-t border-border pt-8">
-        <p className="text-4xl font-display text-white mb-1">{price}</p>
+        <p className="text-4xl font-display text-gradient-gold mb-1">
+          {price}
+        </p>
         <p className="text-sm text-white/40 mb-6">{priceNote}</p>
         <Button href={href} variant="outline" className="w-full">
           {cta}
