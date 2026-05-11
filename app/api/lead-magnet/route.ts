@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Tag IDs in Kit (Savage Executive account)
+const TAG_IDS: Record<string, number> = {
+  scorecard: 19502803,
+  "blog-slide-up": 19502804,
+  "playbook-homepage": 19502805,
+  "playbook-blog-cta": 19502806,
+};
+
 export async function POST(req: NextRequest) {
   try {
-    const { email, name } = await req.json();
+    const body = await req.json();
+    const { email, name, source, score } = body;
 
     if (!email || !name) {
       return NextResponse.json(
@@ -11,20 +20,53 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // TODO: Wire up Resend for email delivery
-    // For now, log the lead and return the download URL
-    console.log(`[Lead Magnet] New signup: ${name} <${email}>`);
+    const kitApiKey = process.env.KIT_API_KEY;
 
-    // When Resend is configured, this will:
-    // 1. Send the PDF via email using Resend
-    // 2. Add the subscriber to "The Briefing" audience
-    // For now, return success with the direct download link
+    if (!kitApiKey) {
+      console.error("[Kit] KIT_API_KEY not configured");
+      return NextResponse.json({
+        success: true,
+        downloadUrl: "/the-savage-advantage-playbook.pdf",
+      });
+    }
+
+    // Determine which tag to apply based on source
+    const tagId = TAG_IDS[source] || TAG_IDS["playbook-homepage"];
+
+    // Subscribe to Kit with tag
+    const kitRes = await fetch(
+      `https://api.convertkit.com/v3/tags/${tagId}/subscribe`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          api_key: kitApiKey,
+          email,
+          first_name: name,
+          ...(score !== undefined && {
+            fields: {
+              scorecard_score: String(score),
+            },
+          }),
+        }),
+      }
+    );
+
+    if (!kitRes.ok) {
+      const err = await kitRes.text();
+      console.error(`[Kit API] Tag subscribe failed (${kitRes.status}):`, err);
+    } else {
+      console.log(
+        `[Kit] Subscribed ${email} with tag "${source}" (${tagId})`
+      );
+    }
 
     return NextResponse.json({
       success: true,
       downloadUrl: "/the-savage-advantage-playbook.pdf",
     });
-  } catch {
+  } catch (error) {
+    console.error("[Lead Magnet] Error:", error);
     return NextResponse.json(
       { error: "Something went wrong." },
       { status: 500 }

@@ -4,7 +4,13 @@ import { useState } from "react";
 
 type Variant = "inline" | "hero";
 
-export function LeadMagnetForm({ variant = "inline" }: { variant?: Variant }) {
+export function LeadMagnetForm({
+  variant = "inline",
+  source = "playbook-homepage",
+}: {
+  variant?: Variant;
+  source?: string;
+}) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [status, setStatus] = useState<
@@ -19,7 +25,7 @@ export function LeadMagnetForm({ variant = "inline" }: { variant?: Variant }) {
       const res = await fetch("/api/lead-magnet", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name }),
+        body: JSON.stringify({ email, name, source }),
       });
 
       if (!res.ok) throw new Error("Failed");

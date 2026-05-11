@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: Props) {
                   who burn out. Free download.
                 </p>
                 <div className="mt-6">
-                  <LeadMagnetForm variant="hero" />
+                  <LeadMagnetForm variant="hero" source="playbook-blog-cta" />
                 </div>
               </div>
             </div>
