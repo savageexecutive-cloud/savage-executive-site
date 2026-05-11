@@ -4,7 +4,7 @@ export const SITE = {
   description:
     "I help faith-driven CEOs and ministry leaders build organizations that thrive — financially sound, operationally excellent, and grounded in timeless wisdom.",
   url: "https://savageexecutive.com",
-  calendlyUrl: "https://calendly.com/savageexecutive/clarity-call",
+  calendlyUrl: "https://calendly.com/savageexecutive/30min",
   ga4Id: "G-JRQNY4BFV0",
 } as const;
 
