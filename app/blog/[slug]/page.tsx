@@ -6,6 +6,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import { LeadMagnetForm } from "@/components/LeadMagnetForm";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE } from "@/lib/constants";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -20,9 +22,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  const ogImage = `/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt || "")}&type=blog`;
+
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Steve Smith"],
+      images: [{ url: ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [ogImage],
+    },
   };
 }
 
@@ -39,6 +57,30 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          author: {
+            "@type": "Person",
+            name: "Steve Smith",
+            url: `${SITE.url}/about`,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Savage Executive",
+            url: SITE.url,
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${SITE.url}/blog/${slug}`,
+          },
+          image: `${SITE.url}/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt || "")}&type=blog`,
+        }}
+      />
       {/* Header */}
       <section className="pt-32 pb-12">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">

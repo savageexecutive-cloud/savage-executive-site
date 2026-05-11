@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { QuoteBlock } from "@/components/ui/QuoteBlock";
 import { Reveal } from "@/components/ui/Reveal";
+import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -92,6 +93,33 @@ const proverbs = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Steve Smith",
+          jobTitle: "Fractional COO/CFO",
+          url: `${SITE.url}/about`,
+          image: `${SITE.url}/images/steve-headshot.jpeg`,
+          worksFor: {
+            "@type": "Organization",
+            name: "Rosedale Ministries",
+          },
+          description:
+            "Fractional COO/CFO helping faith-driven leaders build organizations that last — with financial clarity, operational excellence, and wisdom that actually works.",
+          knowsAbout: [
+            "Financial Strategy",
+            "Operational Excellence",
+            "Strategic Planning",
+            "Leadership Development",
+            "Real Estate Acquisitions",
+          ],
+          sameAs: [
+            "https://x.com/SavageExec",
+            "https://www.linkedin.com/in/savageexecutive/",
+          ],
+        }}
+      />
       {/* Hero */}
       <section className="pt-32 pb-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
