@@ -75,30 +75,76 @@ export async function POST(req: NextRequest) {
     const isDraft = req.nextUrl.searchParams.get("draft") === "true";
 
     // Build the email content
-    const subject = latest.title;
-    const previewText = latest.excerpt.slice(0, 140);
+    const subject = `${latest.title} — The Briefing`;
+
+    // Truncate excerpt to ~2 sentences for the highlight
+    const highlight = latest.excerpt.length > 200
+      ? latest.excerpt.slice(0, latest.excerpt.indexOf(".", 120) + 1) || latest.excerpt.slice(0, 200) + "..."
+      : latest.excerpt;
+
+    // Optional offer section — set BRIEFING_OFFER_HTML env var to include
+    const offerHtml = process.env.BRIEFING_OFFER_HTML || "";
 
     const content = `
 <div style="font-family: Georgia, 'Times New Roman', serif; max-width: 580px; margin: 0 auto; color: #1a1a1a; line-height: 1.7;">
-  <p style="font-size: 15px; color: #666; margin-bottom: 24px;">
-    This week on <strong>The Briefing</strong> —
-  </p>
 
-  <h1 style="font-size: 26px; font-weight: bold; color: #111; margin-bottom: 12px; line-height: 1.3;">
-    ${latest.title}
-  </h1>
-
-  <p style="font-size: 14px; color: #888; margin-bottom: 20px;">
-    ${latest.readTime} &nbsp;·&nbsp; ${latest.category}
-  </p>
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
+    <tr>
+      <td>
+        <span style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #C8A55C; font-weight: 600;">The Briefing</span>
+        <span style="font-size: 11px; color: #bbb;">&nbsp;&nbsp;|&nbsp;&nbsp;Savage Executive</span>
+      </td>
+    </tr>
+  </table>
 
   <p style="font-size: 16px; color: #333; margin-bottom: 28px;">
-    ${latest.excerpt}
+    ${highlight}
+  </p>
+
+  <h2 style="font-size: 24px; font-weight: bold; color: #111; margin-bottom: 8px; line-height: 1.3;">
+    ${latest.title}
+  </h2>
+
+  <p style="font-size: 13px; color: #999; margin-bottom: 16px;">
+    ${latest.readTime} &nbsp;&middot;&nbsp; ${latest.category}
   </p>
 
   <a href="${postUrl}" style="display: inline-block; background-color: #C8A55C; color: #111; text-decoration: none; padding: 14px 32px; font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">
-    Read the Full Article →
+    Read the Full Article &rarr;
   </a>
+
+  ${offerHtml ? `
+  <div style="margin-top: 36px; padding: 24px; border: 1px solid #e5e5e5; border-left: 3px solid #C8A55C;">
+    ${offerHtml}
+  </div>
+  ` : ""}
+
+  <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 36px 0;" />
+
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td style="padding-bottom: 8px;">
+        <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #C8A55C; font-weight: 600;">From the Podcast</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding-bottom: 16px;">
+        <p style="font-size: 15px; color: #333; margin: 0 0 4px 0; font-weight: 600;">
+          The Savage Executive Podcast
+        </p>
+        <p style="font-size: 13px; color: #888; margin: 0;">
+          Leadership and money mastery for faith-driven CEOs and ministry leaders.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://podcasts.apple.com/us/podcast/savage-executive-podcast/id1811171361" style="font-size: 13px; color: #C8A55C; text-decoration: none; margin-right: 16px;">Apple Podcasts</a>
+        <a href="https://open.spotify.com/show/2t9V7W1MohExbvUB0KhTzp" style="font-size: 13px; color: #C8A55C; text-decoration: none; margin-right: 16px;">Spotify</a>
+        <a href="https://www.youtube.com/@SavageExecutive/podcasts" style="font-size: 13px; color: #C8A55C; text-decoration: none;">YouTube</a>
+      </td>
+    </tr>
+  </table>
 
   <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 36px 0;" />
 
