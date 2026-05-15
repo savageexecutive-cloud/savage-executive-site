@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/JsonLd";
@@ -58,6 +59,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${sourceSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-primary text-white font-body">
+        <GoogleAnalytics gaId={SITE.ga4Id} />
         <JsonLd
           data={{
             "@context": "https://schema.org",
