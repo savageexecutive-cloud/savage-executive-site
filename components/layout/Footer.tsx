@@ -11,7 +11,7 @@ const resourceLinks = [
   { label: "Podcast", href: "/podcast" },
   { label: "Savage Advantage Scorecard", href: "/scorecard" },
   { label: "About Steve", href: "/about" },
-  { label: "The Savage Advantage Playbook", href: "/the-savage-advantage-playbook.pdf", external: true },
+  { label: "The Savage Advantage Playbook", href: "/scorecard" },
 ];
 
 const socialLinks = [

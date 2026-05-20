@@ -55,4 +55,4 @@ If you want to start operating as a steward instead of an owner, here are three 
 
 ---
 
-*This is the second discipline from [The Savage Advantage Playbook](/the-savage-advantage-playbook.pdf). The shift from ownership to stewardship isn't just philosophical — it's the foundation for everything else that follows.*
+*This is the second discipline from [The Savage Advantage Playbook](/scorecard). The shift from ownership to stewardship isn't just philosophical — it's the foundation for everything else that follows.*

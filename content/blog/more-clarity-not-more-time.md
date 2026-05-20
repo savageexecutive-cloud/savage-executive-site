@@ -71,4 +71,4 @@ That's the first discipline. And it's the one that makes the other four possible
 
 ---
 
-*This is part of an ongoing series on the five disciplines from [The Savage Advantage Playbook](/the-savage-advantage-playbook.pdf) — practical frameworks for leaders who build to last.*
+*This is part of an ongoing series on the five disciplines from [The Savage Advantage Playbook](/scorecard) — practical frameworks for leaders who build to last.*

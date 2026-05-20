@@ -49,4 +49,4 @@ If the answer is no, you've found your starting point.
 
 ---
 
-*This is the first in a series on the five disciplines from [The Savage Advantage Playbook](/the-savage-advantage-playbook.pdf). Next up: Stewardship — the difference between ownership and stewardship, and why it changes everything.*
+*This is the first in a series on the five disciplines from [The Savage Advantage Playbook](/scorecard). Next up: Stewardship — the difference between ownership and stewardship, and why it changes everything.*

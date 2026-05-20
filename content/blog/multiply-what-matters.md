@@ -63,4 +63,4 @@ Together, they form the foundation for leadership that doesn't just succeed in a
 
 ---
 
-*This is the final discipline in [The Savage Advantage Playbook](/the-savage-advantage-playbook.pdf). If you've been following this series, the playbook brings all five disciplines together with a 30-day activation framework.*
+*This is the final discipline in [The Savage Advantage Playbook](/scorecard). If you've been following this series, the playbook brings all five disciplines together with a 30-day activation framework.*

@@ -55,4 +55,4 @@ If you're leading without margin right now, that pressure you're carrying isn't 
 
 ---
 
-*Margin is the third discipline in [The Savage Advantage Playbook](/the-savage-advantage-playbook.pdf). If you haven't downloaded it yet, it includes a 30-day activation framework for building margin into your organization starting this month.*
+*Margin is the third discipline in [The Savage Advantage Playbook](/scorecard). If you haven't downloaded it yet, it includes a 30-day activation framework for building margin into your organization starting this month.*

@@ -51,4 +51,4 @@ That's the fourth discipline in the Savage Advantage framework: accessing wisdom
 
 ---
 
-*Wisdom is the fourth discipline in [The Savage Advantage Playbook](/the-savage-advantage-playbook.pdf). The leaders who last don't just work hard — they work wisely.*
+*Wisdom is the fourth discipline in [The Savage Advantage Playbook](/scorecard). The leaders who last don't just work hard — they work wisely.*
