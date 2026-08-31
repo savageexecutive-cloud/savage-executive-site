@@ -27,9 +27,9 @@ That's the gap. Values without operational weight are just intentions with good 
 
 ## What It Actually Looks Like
 
-When I ran operations for an organization with 160+ employees and a $15M real estate portfolio, my calendar was the most honest document I owned.
+I run operations for an organization with 160+ employees and a $15M real estate portfolio, and my calendar is the most honest document I own.
 
-It didn't tell me what I hoped to care about. It told me what had already won.
+It doesn't tell me what I hope to care about. It tells me what has already won.
 
 Eleven consecutive years under budget didn't come from a values statement. It came from recurring blocks where the numbers got looked at before they became emergencies — while there was still time to steer.
 

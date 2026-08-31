@@ -33,7 +33,7 @@ Multiplication asks: *How many leaders can be developed?*
 
 Those two questions build two completely different organizations. One is a monument to a single person's capacity. The other is a system that keeps producing after that person is gone.
 
-When I ran operations over 160 employees and $15M in real estate, the temptation every single day was to grab the wheel. It's faster to do it yourself. It's cleaner. It feels productive.
+I run operations over 160 employees and $15M in real estate, and the temptation every single day is to grab the wheel. It's faster to do it yourself. It's cleaner. It feels productive.
 
 But the leader who grabs the wheel every time is training an organization that can't drive without them. That's not strength. That's a bottleneck wearing a cape.
 

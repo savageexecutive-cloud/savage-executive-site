@@ -33,7 +33,7 @@ The second is operating at the redline in all three areas. Same surprise, comple
 
 Same problem. One leader has options. The other has only reactions.
 
-When I ran operations for an organization with 160-plus employees and $15 million in real estate, the years that nearly broke us weren't the years revenue dropped. They were the years we had no reserves when it did. After we got disciplined about building margin first — and finished eleven straight years under budget — the surprises didn't stop coming. They just stopped being threats.
+I run operations for an organization with 160-plus employees and $15 million in real estate. The years that nearly broke us weren't the years revenue dropped. They were the years we had no reserves when it did. After we got disciplined about building margin first — and finished eleven straight years under budget — the surprises didn't stop coming. They just stopped being threats.
 
 ## Margin Is Infrastructure, Not Luxury
 

@@ -35,7 +35,7 @@ The approval that sits for four days because only you can sign it. The vendor wh
 
 Or the clearest signal of all: you can't take a real week off. Not "you don't want to" — you *can't*, because a dozen open loops would go quiet the moment you did.
 
-I ran operations for an organization with 160 employees and $15M in real estate, eleven straight years under budget. That number gets attention. But it wasn't sustained by my personal attention to every line item. It held because processes existed independent of me — documented, owned by someone with a name, and reviewed on a rhythm that ran whether or not I was in the building.
+I run operations for an organization with 160 employees and $15M in real estate — eleven straight years under budget. That number gets attention. But it isn't sustained by my personal attention to every line item. It holds because processes exist independent of me — documented, owned by someone with a name, and reviewed on a rhythm that runs whether or not I'm in the building.
 
 The years I was most personally indispensable were not the years the organization was strongest. They were the years I hadn't finished building yet.
 
